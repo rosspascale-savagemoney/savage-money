@@ -28,7 +28,6 @@ fbq('track', 'PageView');
   --cream:  #F8FAF8;
   --text:   #1B2E22;
   --muted:  #5C7A64;
-  --warm:   #F4F1EC;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,8 +35,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--text);
+  background: var(--dark);
+  color: var(--cream);
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
 }
@@ -47,7 +46,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 0 18px;
+  padding: 0 20px;
   height: 52px;
   display: flex;
   align-items: center;
@@ -84,6 +83,13 @@ nav {
   font-weight: 700;
   font-size: 17px;
   color: white;
+}
+
+.nav-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  margin-left: 2px;
 }
 
 .nav-cta {
@@ -160,7 +166,7 @@ nav {
 
 .hero h1 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(42px, 11vw, 64px);
+  font-size: clamp(40px, 11vw, 66px);
   font-weight: 900;
   line-height: 1.04;
   color: white;
@@ -183,7 +189,7 @@ nav {
   margin-bottom: 32px;
   opacity: 0;
   animation: fadeUp 0.8s 0.3s ease forwards;
-  max-width: 340px;
+  max-width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -209,6 +215,7 @@ nav {
   transition: background 0.2s, transform 0.15s;
   position: relative;
   overflow: hidden;
+  margin-bottom: 32px;
 }
 
 .hero-btn::after {
@@ -221,54 +228,55 @@ nav {
 
 .hero-btn:active {
   transform: scale(0.98);
-  background: var(--light);
-  color: var(--dark);
 }
 
 .hero-note {
-  margin-top: 14px;
   font-size: 12px;
   color: rgba(255,255,255,0.25);
   letter-spacing: 0.03em;
   opacity: 0;
   animation: fadeUp 0.8s 0.5s ease forwards;
+  margin-bottom: 0;
 }
 
-/* TRUST BAR */
-.trust {
-  background: white;
-  border-bottom: 1px solid rgba(45,106,79,0.07);
-  padding: 16px 20px;
+/* SERVICES STRIP */
+.services {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 6px;
+  gap: 12px 8px;
 }
 
-.trust-item {
+.service-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 13px;
-  color: var(--muted);
+  color: rgba(255,255,255,0.5);
 }
 
-.trust-item strong {
-  color: var(--text);
+.service-item strong {
+  color: white;
   font-weight: 600;
+  display: block;
+  font-size: 13px;
 }
 
-.t-dot {
+.s-dot {
   width: 6px;
   height: 6px;
-  background: var(--mid);
+  background: var(--light);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 /* ROSS SECTION */
 .ross {
-  padding: 56px 20px;
-  background: var(--cream);
+  padding: 48px 20px 56px;
+  background: var(--dark);
 }
 
 .ross-inner {
@@ -277,7 +285,8 @@ nav {
 }
 
 .ross-card {
-  background: var(--dark);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 20px;
   padding: 28px 24px;
   margin-bottom: 32px;
@@ -290,7 +299,7 @@ nav {
   position: absolute;
   top: -40px; right: -40px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(64,145,108,0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(64,145,108,0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -298,7 +307,7 @@ nav {
   font-family: 'Fraunces', serif;
   font-size: 80px;
   line-height: 0.7;
-  color: rgba(116,198,157,0.12);
+  color: rgba(116,198,157,0.1);
   position: absolute;
   top: 18px;
   left: 22px;
@@ -308,7 +317,7 @@ nav {
 
 .ross-card p {
   font-family: 'Fraunces', serif;
-  font-size: clamp(19px, 4.5vw, 26px);
+  font-size: clamp(18px, 4.5vw, 24px);
   font-style: italic;
   font-weight: 400;
   color: rgba(255,255,255,0.85);
@@ -356,11 +365,18 @@ nav {
   color: rgba(255,255,255,0.35);
 }
 
+.sig-proof {
+  font-size: 11px;
+  color: var(--light);
+  margin-top: 3px;
+  font-weight: 500;
+}
+
 .ross-copy h2 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(26px, 7vw, 40px);
+  font-size: clamp(26px, 7vw, 38px);
   font-weight: 700;
-  color: var(--text);
+  color: var(--cream);
   line-height: 1.15;
   margin-bottom: 18px;
 }
@@ -368,17 +384,18 @@ nav {
 .ross-copy p {
   font-size: 16px;
   line-height: 1.78;
-  color: var(--muted);
+  color: rgba(255,255,255,0.55);
   margin-bottom: 12px;
 }
 
-/* WHAT YOU GET */
-.gets {
+/* WHAT WE HELP WITH */
+.helps {
   background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 56px 20px;
 }
 
-.gets-inner {
+.helps-inner {
   max-width: 960px;
   margin: 0 auto;
 }
@@ -393,62 +410,60 @@ nav {
   display: block;
 }
 
-.gets h2 {
+.helps h2 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(26px, 7vw, 42px);
+  font-size: clamp(26px, 7vw, 38px);
   font-weight: 700;
   color: white;
   line-height: 1.12;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
-.get-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.get-row {
-  padding: 24px 0;
-  border-top: 1px solid rgba(255,255,255,0.07);
+.help-grid {
   display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 16px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.get-row:last-child {
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+.help-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 22px 20px;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.get-n {
+.help-card:active {
+  background: rgba(116,198,157,0.08);
+  border-color: rgba(116,198,157,0.2);
+}
+
+.help-icon {
+  font-size: 22px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.help-card h3 {
   font-family: 'Fraunces', serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--light);
-  padding-top: 3px;
-  letter-spacing: 0.05em;
-}
-
-.get-row h3 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(18px, 4.5vw, 24px);
+  font-size: 17px;
   font-weight: 700;
   color: white;
   margin-bottom: 6px;
   line-height: 1.2;
 }
 
-.get-row p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.45);
+.help-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.4);
 }
 
-/* BOOK SECTION */
+/* BOOK */
 .book {
   background: var(--dark);
-  padding: 8px 20px 56px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 56px 20px;
 }
 
 .book-inner {
@@ -508,25 +523,13 @@ nav {
   transform: translateY(0);
 }
 
-/* MOBILE SPECIFIC - 390px and under (iPhone) */
-@media (max-width: 390px) {
-  .hero h1 { font-size: 38px; }
-  .hero-body { font-size: 14px; }
-  .ross-card p { font-size: 18px; }
-  .ross-copy h2 { font-size: 24px; }
-  .gets h2 { font-size: 24px; }
-  .book h2 { font-size: 24px; }
-  .get-row h3 { font-size: 17px; }
-}
-
 /* DESKTOP */
 @media (min-width: 768px) {
   nav { padding: 0 48px; height: 64px; }
-
   .hero { padding: 96px 48px 72px; }
-  .hero-btn { width: auto; min-width: 300px; max-width: 360px; margin: 0 auto; }
+  .hero-btn { width: auto; min-width: 300px; max-width: 360px; margin: 0 auto 32px; }
 
-  .trust {
+  .services {
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -546,28 +549,51 @@ nav {
 
   .ross-card { margin-bottom: 0; }
 
-  .gets { padding: 96px 48px; }
+  .helps { padding: 96px 48px; }
 
-  .get-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 1px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 0;
+  .help-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .get-row {
-    background: var(--dark);
-    padding: 28px 24px;
-    border-top: none;
-    border-bottom: none;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
+  .book { padding: 96px 48px; }
+}
 
-  .get-row:last-child { border-bottom: none; }
+/* SMALL PHONES */
+@media (max-width: 390px) {
+  .hero h1 { font-size: 36px; }
+  .hero-body { font-size: 14px; }
+  .ross-card p { font-size: 17px; }
+  .ross-copy h2 { font-size: 24px; }
+  .helps h2 { font-size: 22px; }
+  .book h2 { font-size: 24px; }
+  .help-card h3 { font-size: 15px; }
+  .help-card p { font-size: 12px; }
+}
 
-  .book { padding: 16px 48px 96px; }
+/* MOBILE GENERAL */
+@media (max-width: 768px) {
+  .hero { padding: 68px 20px 44px; }
+  .hero h1 { font-size: clamp(38px, 10vw, 56px); margin-bottom: 14px; }
+  .hero-body { font-size: 15px; margin-bottom: 28px; }
+  .hero-btn { height: 54px; font-size: 16px; border-radius: 12px; }
+  .hero-note { font-size: 12px; }
+  .services { padding: 16px 20px; gap: 10px 6px; }
+  .service-item { font-size: 13px; }
+  .ross { padding: 40px 20px 48px; }
+  .ross-card { padding: 24px 20px; border-radius: 18px; margin-bottom: 28px; }
+  .ross-card p { font-size: clamp(17px, 4vw, 22px); }
+  .ross-copy h2 { font-size: clamp(24px, 6.5vw, 34px); margin-bottom: 14px; }
+  .ross-copy p { font-size: 15px; }
+  .helps { padding: 44px 20px; }
+  .helps h2 { font-size: clamp(22px, 6vw, 32px); margin-bottom: 24px; }
+  .help-grid { gap: 10px; }
+  .help-card { padding: 18px 16px; border-radius: 14px; }
+  .help-icon { font-size: 20px; margin-bottom: 8px; }
+  .help-card h3 { font-size: 15px; margin-bottom: 4px; }
+  .help-card p { font-size: 12px; }
+  .book { padding: 44px 20px 48px; }
+  .book h2 { font-size: clamp(24px, 6.5vw, 36px); margin-bottom: 8px; }
+  .book-sub { font-size: 14px; margin-bottom: 24px; }
 }
 </style>
 </head>
@@ -577,7 +603,10 @@ nav {
 <nav>
   <a href="#" class="nav-logo">
     <div class="logo-mark">SM</div>
-    <span class="logo-text">Savage Money</span>
+    <div>
+      <span class="logo-text">Savage Money</span>
+      <span class="nav-sub"> · Ross Pascale</span>
+    </div>
   </a>
   <button class="nav-cta" onclick="scrollToBook()">Book a Call</button>
 </nav>
@@ -591,37 +620,37 @@ nav {
       15-Min Call with Ross Pascale
     </div>
 
-    <h1>You have<br><em>more options</em><br>than you think.</h1>
+    <h1>Ready to make<br>your <em>next move?</em></h1>
 
     <p class="hero-body">
-      Most first home buyers sit on the idea for way too long. Not because they aren't ready, but because nobody has ever shown them where they actually stand.
+      Whether you're buying your first home, growing your portfolio or refinancing, one conversation with me could be the move that changes everything.
     </p>
 
     <button class="hero-btn" onclick="scrollToBook()">
-      Show me where I stand →
+      Book My Call →
     </button>
 
-    <p class="hero-note">15 minutes · No obligation · Straight answers</p>
+    <p class="hero-note">15 minutes. No obligation. Straight answers.</p>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust">
-  <div class="trust-item">
-    <div class="t-dot"></div>
-    <span><strong>15 minutes</strong> straight answers</span>
+<!-- SERVICES STRIP -->
+<div class="services">
+  <div class="service-item">
+    <div class="s-dot"></div>
+    <div><strong>First Home Buyers</strong></div>
   </div>
-  <div class="trust-item">
-    <div class="t-dot"></div>
-    <span><strong>No pressure</strong> just clarity</span>
+  <div class="service-item">
+    <div class="s-dot"></div>
+    <div><strong>Property Investors</strong></div>
   </div>
-  <div class="trust-item">
-    <div class="t-dot"></div>
-    <span><strong>500+</strong> buyers helped</span>
+  <div class="service-item">
+    <div class="s-dot"></div>
+    <div><strong>Refinancing</strong></div>
   </div>
-  <div class="trust-item">
-    <div class="t-dot"></div>
-    <span><strong>No obligation</strong> whatsoever</span>
+  <div class="service-item">
+    <div class="s-dot"></div>
+    <div><strong>General Lending</strong></div>
   </div>
 </div>
 
@@ -630,52 +659,51 @@ nav {
   <div class="ross-inner">
     <div class="ross-card reveal">
       <div class="big-q">"</div>
-      <p>I was a first home buyer once. I know exactly how confusing it feels. Like you're doing everything right but still can't see the finish line.</p>
+      <p>Most people know they want to move forward. They just don't know what their next step actually looks like. That's exactly what I help you figure out.</p>
       <div class="ross-sig">
         <div class="sig-av">RP</div>
         <div>
           <div class="sig-name">Ross Pascale</div>
           <div class="sig-role">Mortgage Broker · Savage Money</div>
+          <div class="sig-proof">Helped 500+ Australians take their next step</div>
         </div>
       </div>
     </div>
 
     <div class="ross-copy reveal">
-      <h2>That confusion is why I do this.</h2>
-      <p>When I was buying my first home, the process felt overwhelming. Not because it's actually complicated, but because nobody sat down and showed me the full picture.</p>
-      <p>That's what I do now. In 15 minutes I'll show you exactly what you're working with. Your real borrowing power, what grants are available to your advantage, and what your next step actually is.</p>
-      <p>Whether you're ready to buy in 3 months or just starting to think about it, there's no wrong place to be starting from.</p>
+      <h2>The right move starts with the right conversation.</h2>
+      <p>As a mortgage broker at Savage Money, I work with people every day who are ready to make a move but don't know where to start. First home, investment, refinance. Whatever it is, I'll show you exactly what you can do, what you qualify for, and the fastest way to get there.</p>
+      <p>In 15 minutes I'll show you exactly where you stand, what you're working with and what your smartest next move actually is.</p>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU GET -->
-<section class="gets">
-  <div class="gets-inner">
-    <span class="eyebrow reveal">What we cover</span>
-    <h2 class="reveal">Three things you'll actually walk away knowing.</h2>
+<!-- WHAT WE HELP WITH -->
+<section class="helps">
+  <div class="helps-inner">
+    <span class="eyebrow reveal">What we can help with</span>
+    <h2 class="reveal">Whatever your next move is, we've got you.</h2>
 
-    <div class="get-list">
-      <div class="get-row reveal">
-        <div class="get-n">01</div>
-        <div>
-          <h3>Your Real Borrowing Power</h3>
-          <p>Not a rough guess. Your actual number based on your income and situation. Usually more than people expect.</p>
-        </div>
+    <div class="help-grid">
+      <div class="help-card reveal">
+        <span class="help-icon">🏡</span>
+        <h3>First Home Buyers</h3>
+        <p>Find out what you can borrow and what grants are available to your advantage.</p>
       </div>
-      <div class="get-row reveal">
-        <div class="get-n">02</div>
-        <div>
-          <h3>Grants Available To Your Advantage</h3>
-          <p>Most first home buyers miss out on thousands because nobody told them. We'll cover every scheme you qualify for.</p>
-        </div>
+      <div class="help-card reveal">
+        <span class="help-icon">📈</span>
+        <h3>Property Investment</h3>
+        <p>Build your portfolio the right way with the right finance structure behind it.</p>
       </div>
-      <div class="get-row reveal">
-        <div class="get-n">03</div>
-        <div>
-          <h3>Your Clear Next Step</h3>
-          <p>Not a vague suggestion. A specific, honest next step based on exactly where you're at right now.</p>
-        </div>
+      <div class="help-card reveal">
+        <span class="help-icon">🔄</span>
+        <h3>Refinancing</h3>
+        <p>Stop paying more than you need to. We'll find you a better deal.</p>
+      </div>
+      <div class="help-card reveal">
+        <span class="help-icon">💼</span>
+        <h3>General Lending</h3>
+        <p>Whatever you're working towards, let's find the right finance solution.</p>
       </div>
     </div>
   </div>
@@ -685,8 +713,8 @@ nav {
 <section class="book" id="book">
   <div class="book-inner">
     <span class="eyebrow reveal">Book your call</span>
-    <h2 class="reveal">Book your discovery call.</h2>
-    <p class="book-sub reveal">15 minutes with Ross. No preparation needed, just show up and we'll figure out exactly where you stand.</p>
+    <h2 class="reveal">Book your call.</h2>
+    <p class="book-sub reveal">Every month you wait is a month further from where you want to be. 15 minutes with me could change that.</p>
 
     <div class="cal-wrap reveal">
       <div
